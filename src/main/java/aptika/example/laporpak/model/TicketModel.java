@@ -11,9 +11,7 @@ import java.util.List;
 @Entity
 @Setter
 @Getter
-
 @Table(name = "Tickets")
-
 public class TicketModel {
     @Id
     @GeneratedValue(generator = "uuid")
@@ -26,6 +24,7 @@ public class TicketModel {
 
     @Column(name = "description")
     private String description;
+
     @Column(name = "status")
     private String status;
 
@@ -50,7 +49,6 @@ public class TicketModel {
     @Column(name = "closed_at")
     private LocalDateTime closedAt;
 
-    @OneToMany(mappedBy = "ticket")
-    private List<CommentModel> comments;
-
+    @OneToMany(mappedBy = "ticketId")
+    private List<CommentModel> comments; // Update mappedBy attribute to match the property name in CommentModel
 }

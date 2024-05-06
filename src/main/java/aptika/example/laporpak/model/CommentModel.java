@@ -19,12 +19,11 @@ public class CommentModel {
     @Column(name = "comment_id", unique = true)
     private String commentId;
 
-    @ManyToOne
-    @JoinColumn(name = "ticket_id")
-    private TicketModel ticket;
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private UserModel user;
+    @Column(name = "ticket_id")
+    private String ticketId;
+
+    @Column(name = "user_id")
+    private String userId;
     @Column(name = "comment")
     private String comment;
     @Column(name = "created_at")
