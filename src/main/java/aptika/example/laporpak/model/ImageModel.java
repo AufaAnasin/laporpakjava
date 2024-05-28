@@ -10,8 +10,7 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 @Entity
-@Table(name = "Images")
-
+@Table(name = "images")
 public class ImageModel {
     @Id
     @GeneratedValue(generator = "uuid")
@@ -20,12 +19,16 @@ public class ImageModel {
     private String imageId;
 
     @ManyToOne
-    @JoinColumn(name = "ticket_id")
+    @JoinColumn(name = "ticket_id", nullable = true)
     private TicketModel ticket;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private UserModel user;
+
+    @ManyToOne
+    @JoinColumn(name = "comment_id", nullable = true)
+    private CommentModel comment;
 
     @Column(name = "file_name")
     private String fileName;
@@ -35,7 +38,7 @@ public class ImageModel {
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
-
 }

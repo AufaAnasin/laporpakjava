@@ -11,7 +11,7 @@ import java.util.List;
 @Entity
 @Setter
 @Getter
-@Table(name = "Users")
+@Table(name = "users")
 public class UserModel {
     @Id
     @GeneratedValue(generator = "uuid")

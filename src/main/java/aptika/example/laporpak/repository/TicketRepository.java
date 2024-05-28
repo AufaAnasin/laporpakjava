@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 import java.util.Optional;
 
-public interface TicketRepository extends JpaRepository<TicketModel, Integer> {
+public interface TicketRepository extends JpaRepository<TicketModel, String> {
 
     @Query(value = "SELECT * FROM tickets", nativeQuery = true)
     List<TicketModel> findAllTickets();
